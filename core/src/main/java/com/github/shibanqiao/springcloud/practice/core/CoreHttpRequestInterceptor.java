@@ -22,7 +22,7 @@ public class CoreHttpRequestInterceptor implements ClientHttpRequestInterceptor 
         HttpRequestWrapper requestWrapper = new HttpRequestWrapper(request);
 
         String header = StringUtils.collectionToDelimitedString(CoreHeaderInterceptor.label.get(), CoreHeaderInterceptor.HEADER_LABEL_SPLIT);
-        logger.info("label: "+header);
+        logger.info("label: " + header);
         requestWrapper.getHeaders().add(CoreHeaderInterceptor.HEADER_LABEL, header);
 
         return execution.execute(requestWrapper, body);
