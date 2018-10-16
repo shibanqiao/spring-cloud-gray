@@ -93,6 +93,7 @@ public class LabelAndWeightMetadataRule extends ZoneAvoidanceRule {
         List<Server> serverList = this.getPredicate().getEligibleServers(this.getLoadBalancer().getAllServers(), key);
 
         if (CollectionUtils.isEmpty(serverList)) {
+            logger.info("--------------------无服务--------------------");
             return null;
         }
 
@@ -169,7 +170,7 @@ public class LabelAndWeightMetadataRule extends ZoneAvoidanceRule {
             }
         }
 
-        logger.info("--------------------未找到有效服务--------------------");
+        logger.info("--------------------无有效服务--------------------");
 
         return null;
     }

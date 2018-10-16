@@ -29,7 +29,7 @@ public class GrayFeignClient implements Client {
         String header = StringUtils.collectionToDelimitedString(CoreHeaderInterceptor.label.get(), CoreHeaderInterceptor.HEADER_LABEL_SPLIT);
         logger.info("服务调用(F) -- {}, {}, label: {}", request.method(), request.url(), header);
 
-        // TODO shirorealm
+        // shiro realm错误对应
         if (!HystrixRequestContext.isCurrentThreadInitialized()) {
             HystrixRequestContext.initializeContext();
         }
