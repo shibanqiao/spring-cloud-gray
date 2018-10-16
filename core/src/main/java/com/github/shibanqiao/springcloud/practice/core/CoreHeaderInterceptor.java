@@ -23,8 +23,15 @@ public class CoreHeaderInterceptor extends HandlerInterceptorAdapter {
     public static final String HEADER_LABEL = "x-label";
     public static final String HEADER_LABEL_SPLIT = ",";
 
-    public static final HystrixRequestVariableDefault<List<String>> label = new HystrixRequestVariableDefault<>();
-
+    public static final HystrixRequestVariableDefault<List<String>> label = new HystrixRequestVariableDefault<List<String>>(){
+        @Override
+        public List<String> get() {
+            if (!HystrixRequestContext.isCurrentThreadInitialized()) {
+                return null;
+            }
+            return super.get();
+        }
+    };
 
     public static void initHystrixRequestContext(String labels) {
         logger.info("label: " + labels);
