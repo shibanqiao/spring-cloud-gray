@@ -1,2 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.github.shibanqiao.springcloud.practice.core.CoreAutoConfiguration
+  com.github.shibanqiao.springcloud.gray.core.CoreAutoConfiguration,\
+  com.github.shibanqiao.springcloud.gray.feign.GrayFeignConfiguration,\
+  com.github.shibanqiao.springcloud.gray.zuul.GrayZuulConfiguration
