@@ -1,6 +1,6 @@
 # spring cloud 实践
 
-![metadata管理页面](https://raw.githubusercontent.com/charlesvhe/spring-cloud-practice/master/metadata.html.png)
+![metadata管理页面](https://www.shibanqiao.com/spring-cloud-gray/metadata.html.png)
 
 ## 项目结构
 ### config 配置中心
